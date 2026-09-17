@@ -65,10 +65,17 @@ Older NVIDIA cards (Ampere, Hopper, Ada) are **not** in this build. Use upstream
 
 ## Quick start
 
-1. Download the zip from [releases](../../releases)
-2. Extract anywhere
-3. Download a GGUF model
-4. Run from the extracted folder:
+1. Download **all five parts** of the zip from [releases](../../releases) — GitHub's upload endpoint refused the 668 MB archive as a single file, so it is published split
+2. Put them in one folder and join them:
+
+   ```cmd
+   copy /b llama-...zip.part00 + llama-...zip.part01 + llama-...zip.part02 + llama-...zip.part03 + llama-...zip.part04 llama-...zip
+   ```
+
+   (Git Bash / WSL: `cat llama-...zip.part0* > llama-...zip`. The release page lists the full command and the SHA-256 of every part.)
+3. Extract anywhere
+4. Download a GGUF model
+5. Run from the extracted folder:
 
 ```cmd
 .\llama-server.exe ^
